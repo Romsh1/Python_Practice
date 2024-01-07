@@ -80,3 +80,25 @@ b = Person("Divya", "Hr")
 print(a.name)
 a.info()
 b.info()
+
+
+# DECORATORS
+def greet(fx):
+    ## *args --> Takes arguments as a tuple
+    ## **Kwargs --> Takes arhuments as a dictionary
+    def mfx(*args, **kwargs):
+        print("Good Morning")
+        fx(*args, **kwargs)
+        print("Thanks for using this function.")
+    return mfx
+
+@greet
+def hello():
+    print("Hello world")
+
+@greet
+def add(a,b):
+    print(a+b)
+
+hello()
+add(1, 2)
